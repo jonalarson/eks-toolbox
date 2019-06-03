@@ -39,7 +39,7 @@ $ docker run -it henrybravo/oh-my-eks-toolbox
 
 ## requirements
 
-`As shown in the screenshots bellow, the OSX host has also been configured with oh-my-zsh, powerlvl 9k and the Hack fonts and runs iTerm2.`
+`As shown in the screenshots bellow, the OSX host has also been configured with oh-my-zsh, powerlvl9k and the Hack fonts and runs iTerm2.`
 
 Please follow this guides to set up your host:
 
@@ -47,6 +47,6 @@ Please follow this guides to set up your host:
 * Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh#basic-installation)
 * Install [powerlevel9k](https://github.com/bhilburn/powerlevel9k#installation)
   * Install the [Powerlevel9k Theme](https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#step-1-install-powerlevel9k)
-  * Install [Powerline Fonts] Nerd Fonts(https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#option-4-install-nerd-fonts)
+  * Install Powerline Fonts [Nerd Fonts](https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#option-4-install-nerd-fonts)
   * Install [nerd-fonts](https://github.com/ryanoasis/nerd-fonts#option-5-clone-the-repo) - `$ git clone --depth 1` the repo && run `$ install.sh`
  
