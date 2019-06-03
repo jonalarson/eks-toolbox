@@ -111,3 +111,4 @@ alias k="~/bin/kubectl"
 alias l="ls -ltH"
 
 export KUBECONFIG=~/.kube/config
+export AWS_DEFAULT_PROFILE=kubectl
