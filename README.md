@@ -1,0 +1,3 @@
+# oh-my-eks-toolbox
+
+Dockerfile to create and EKS toolbox container with tools like: kubectl, eksctl, helm, aws-iam-authenticator and terraform all used in a oh-my-zsh with the powerlevel 9k tools and more...
