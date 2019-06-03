@@ -46,5 +46,7 @@ Please follow this guides to set up your host:
 * Install [zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
 * Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh#basic-installation)
 * Install [powerlevel9k](https://github.com/bhilburn/powerlevel9k#installation)
+  * Install the [Powerlevel9k Theme](https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#step-1-install-powerlevel9k)
+  * Install [Powerline Fonts] Nerd Fonts(https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#option-4-install-nerd-fonts)
   * Install [nerd-fonts](https://github.com/ryanoasis/nerd-fonts#option-5-clone-the-repo) - `$ git clone --depth 1` the repo && run `$ install.sh`
  
