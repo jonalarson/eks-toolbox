@@ -34,6 +34,6 @@ on the right prompt, from right to left:
 You can clone and build this repo or get existing image from the hub
 
 ```
-$ docker run -it oh-my-eks-toolbox
+$ docker run -it henrybravo/oh-my-eks-toolbox
 ```
 
