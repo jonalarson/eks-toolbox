@@ -5,6 +5,16 @@ and much more...
 
 This image is build on [amazon linux 2](https://aws.amazon.com/amazon-linux-2) and can be used as a complete toolbox. One of the features I like is when you are in a container, this is shown on the left prompt (hint: yellow text).
 
+## required
+
+`As shown in the screenshots bellow, the OSX host has also been configured with oh-my-zsh, powerlvl 9k and the Hack fonts and runs iTerm2.`
+
+Please follow this guides to set up your host:
+
+- [zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
+- [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh#basic-installation)
+- [powerlevel9k](https://github.com/bhilburn/powerlevel9k#installation)
+
 ## the prompt configuration
 
 Host OS:
@@ -36,4 +46,3 @@ You can clone and build this repo or get existing image from the hub
 ```
 $ docker run -it henrybravo/oh-my-eks-toolbox
 ```
-
