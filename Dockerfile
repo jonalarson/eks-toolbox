@@ -81,7 +81,8 @@ RUN yum update -y && \
   # get and install tooling
   RUN mkdir ~/bin \
   && mv /home/${USER_NAME}/.zshrc /home/${USER_NAME}/.zshrc-ohmy-original \
-  && zsh /home/$USER_NAME/tooling.sh \
+  && mv -v /home/$USER_NAME/tooling.sh /home/$USER_NAME/bin/tooling.sh \
+  && zsh /home/$USER_NAME/bin/tooling.sh \
   && mv -v /tmp/aws-iam-authenticator ~/bin \
   && mv -v /tmp/eksctl ~/bin \
   && mv -v /tmp/kubectl ~/bin \
