@@ -4,8 +4,10 @@ echo "get kubectl latest"
 KUBECTL_BIN=kubectl
 #K8SVERSION=1.10.3
 #K8SVERSION=1.11.9
-K8SVERSION=1.12.7
-curl -s -o /tmp/$KUBECTL_BIN https://amazon-eks.s3-us-west-2.amazonaws.com/$K8SVERSION/2019-03-27/bin/linux/amd64/kubectl
+#K8SVERSION=1.12.7
+#curl -s -o /tmp/$KUBECTL_BIN https://amazon-eks.s3-us-west-2.amazonaws.com/$K8SVERSION/2019-03-27/bin/linux/amd64/kubectl
+# K8SVERSION = 1.13.7 released 2019-06-11
+curl -s -o /tmp/$KUBECTL_BIN https://amazon-eks.s3-us-west-2.amazonaws.com/1.13.7/2019-06-11/bin/linux/amd64/kubectl
 
 echo "get eksctl latest"
 EKSCTL_BIN=eksctl
