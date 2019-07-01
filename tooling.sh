@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-getkubectl (){
+getkubectl(){
   echo "get kubectl latest"
   KUBECTL_BIN=kubectl
   #K8SVERSION=1.10.3
@@ -37,9 +37,12 @@ getterraform(){
 }
 
 main() {
+  echo "=> getting da tools for ya!"
   getkubectl
   geteksctls
   gethelm
   getiamauthenticator
   getterraform
 }
+
+main
