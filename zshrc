@@ -19,7 +19,7 @@ POWERLEVEL9K_HOST_ICON="\uF109 "
 POWERLEVEL9K_CONTEXT_TEMPLATE="CONTAINER"
 
 # Show aws default profile in left prompt bar
-AWS_DEFAULT_PROFILE=kubectl
+export AWS_DEFAULT_PROFILE=kubectl
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
