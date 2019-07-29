@@ -39,7 +39,7 @@ getterraform(){
 main() {
   echo "=> getting da tools for ya!"
   getkubectl
-  geteksctls
+  geteksctl
   gethelm
   getiamauthenticator
   getterraform
