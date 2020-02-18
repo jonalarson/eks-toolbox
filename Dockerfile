@@ -1,6 +1,6 @@
 FROM amazonlinux:latest
 
-LABEL maintainer = Henry Bravo info@henrybravo.nl
+LABEL maintainer = Jon Larson jon.larson@c9biz.com
 
 ARG USER_NAME="username"
 ARG USER_PASSWORD="passw0rd"
@@ -13,7 +13,7 @@ RUN echo $USER_NAME
 RUN echo $USER_PASSWORD
 RUN echo $CONTAINER_IMAGE_VER
 
-# install the os packages
+# Install the operating system packages
 RUN yum update -y && \
   yum install -y aws-cli \
   bash-completion \
@@ -46,39 +46,42 @@ RUN yum update -y && \
   which \
   zip \
   zsh \
-  # add the user defined in $USER_NAME
+
+  # Add the user defined in $USER_NAME
   && adduser --shell /bin/zsh --home /home/$USER_NAME $USER_NAME \
-  # update the password and add user to wheel for sudoers
+
+  # Update the password and add user to wheel for sudoers
   && echo "${USER_NAME}:${USER_PASSWORD}" | chpasswd && usermod -aG wheel $USER_NAME
 
-  # add tooling.sh install script
+  # Add tooling.sh install script
   ADD tooling.sh /home/$USER_NAME/
   RUN chown ${USER_NAME}:${USER_NAME} /home/${USER_NAME}/tooling.sh \
   && chmod 0755 /home/${USER_NAME}/tooling.sh
 
-  #
-  # end of root -- proceed with non-root account
-  #
+  # Set terminal colors with xterm
   USER $USER_NAME
-  # terminal colors with xterm
+ 
+  # Set the zsh theme
   ENV TERM xterm
-  # set the zsh theme
   ENV ZSH_THEME powerlevel9k/powerlevel9k
-  # switch to homedir
+
+  # Switch to home directory
   WORKDIR /home/$USER_NAME
 
-  # get oh-my-zsh
+  # Install oh-my-zsh
   RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true \
-  # get powerlvl 9k
+  
+  # Install powerlevel 9k theme
   && git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k \
-  # get Hack nerd-fonts
+  
+  # Install hack nerd-fonts
   && wget https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip \
   && unzip Hack-v3.003-ttf.zip \
   && mkdir -p ~/.local/share/fonts/Hack \
   && mv -v ttf/*.ttf ~/.local/share/fonts/Hack \
   && fc-cache -f -v
 
-  # get and install tooling
+  # Install tooling
   RUN mkdir ~/bin \
   && mv /home/${USER_NAME}/.zshrc /home/${USER_NAME}/.zshrc-ohmy-original \
   && mv -v /home/$USER_NAME/tooling.sh /home/$USER_NAME/bin/tooling.sh \
@@ -91,13 +94,13 @@ RUN yum update -y && \
   && mv -v /tmp/linux-amd64/tiller ~/bin \
   && chmod 0755 ~/bin/*
 
-  # add zshrc
+  # Add zshrc profile
   ADD zshrc /home/${USER_NAME}/.zshrc
   
-  # clean up a bit
+  # Clean up install
   RUN rm -rfv ~/Hack-v3.003-ttf.zip ttf \
-  && rm -rfv /tmp/terraform_0.12.0_linux_amd64.zip /tmp/linux-amd64 \
+  && rm -rfv /tmp/terraform.zip /tmp/linux-amd64 \
   && unset ${USER_PASSWORD}
 
-  # start zsh
+  # Start zsh
   CMD [ "zsh" ]
