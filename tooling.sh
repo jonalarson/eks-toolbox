@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-echo "Installing Tools"
-
 getkubectl(){
   echo "get kubectl latest"
   KUBECTL_BIN=kubectl
